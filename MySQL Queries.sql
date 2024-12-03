@@ -2,10 +2,6 @@
 
 SELECT * FROM walmart;
 
--- DROP TABLE walmart;
-
--- DROP TABLE walmart;
-
 -- Count total records
 SELECT COUNT(*) FROM walmart;
 
@@ -38,11 +34,11 @@ FROM (
         branch,
         category,
         AVG(rating) AS avg_rating,
-        RANK() OVER(PARTITION BY branch ORDER BY AVG(rating) DESC) AS rank
+        RANK() OVER(PARTITION BY branch ORDER BY AVG(rating) DESC) AS ranked
     FROM walmart
     GROUP BY branch, category
 ) AS ranked
-WHERE rank = 1;
+WHERE ranked = 1;
 
 -- Q3: Identify the busiest day for each branch based on the number of transactions
 SELECT branch, day_name, no_transactions
@@ -51,11 +47,11 @@ FROM (
         branch,
         DAYNAME(STR_TO_DATE(date, '%d/%m/%Y')) AS day_name,
         COUNT(*) AS no_transactions,
-        RANK() OVER(PARTITION BY branch ORDER BY COUNT(*) DESC) AS rank
+        RANK() OVER(PARTITION BY branch ORDER BY COUNT(*) DESC) AS ranked
     FROM walmart
     GROUP BY branch, day_name
 ) AS ranked
-WHERE rank = 1;
+WHERE ranked = 1;
 
 -- Q4: Calculate the total quantity of items sold per payment method
 SELECT 
@@ -88,13 +84,13 @@ WITH cte AS (
         branch,
         payment_method,
         COUNT(*) AS total_trans,
-        RANK() OVER(PARTITION BY branch ORDER BY COUNT(*) DESC) AS rank
+        RANK() OVER(PARTITION BY branch ORDER BY COUNT(*) DESC) AS ranked
     FROM walmart
     GROUP BY branch, payment_method
 )
 SELECT branch, payment_method AS preferred_payment_method
 FROM cte
-WHERE rank = 1;
+WHERE ranked = 1;
 
 -- Q8: Categorize sales into Morning, Afternoon, and Evening shifts
 SELECT
