@@ -64,7 +64,6 @@ This project is an end-to-end data analysis solution designed to extract critica
 ### 10. Project Publishing and Documentation
    - **Documentation**: Maintained well-structured documentation of the entire process.
    - **Project Publishing**: Publish the completed project on GitHub.
-   - 
 ---
 
 ## Results and Insights
