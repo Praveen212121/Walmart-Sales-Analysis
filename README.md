@@ -1,4 +1,4 @@
-# Walmart Data Analysis
+# Walmart Sales Analysis
 
 ## Project Overview
 
