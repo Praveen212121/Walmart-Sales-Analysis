@@ -196,9 +196,18 @@ LIMIT 5;
 
 ## Results and Insights
 
-- **Sales Insights**: Key categories, branches with highest sales, and preferred payment methods.
-- **Profitability**: Insights into the most profitable product categories and locations.
-- **Customer Behavior**: Trends in ratings, payment preferences, and peak shopping hours.
+**Sales Insights**
+Key Categories: The dataset reveals that Health and Beauty, Electronic Accessories, and Food and Beverages are prominent categories, with numerous transactions recorded.
+Branches with Highest Sales: Branches such as San Antonio (WALM003) and Irving (WALM013) frequently appear in high-value transactions, indicating strong sales performance in these locations.
+Preferred Payment Methods: The most common payment methods include Ewallet, Cash, and Credit Card, with Ewallet being particularly popular among customers.
+**Profitability**
+Most Profitable Product Categories: Categories like Health and Beauty and Fashion Accessories show higher profit margins, suggesting they are more lucrative for the business.
+Locations of High Profitability: Branches such as Bryan (WALM042) and San Antonio (WALM003) not only have high sales but also significant profit margins, indicating their effectiveness in generating revenue.
+**Customer Behavior**
+Trends in Ratings: Products generally receive favorable ratings, with many items scoring above 8. This suggests customer satisfaction is relatively high across various categories.
+Payment Preferences: Customers tend to favor digital payment options like Ewallet, reflecting a trend towards cashless transactions.
+Peak Shopping Hours: The data indicates peak shopping times are often around late morning to early afternoon (10 AM - 2 PM), which is typical for retail environments.
+This analysis provides a comprehensive overview of sales dynamics, profitability, and customer behavior within the Walmart dataset.
 
 ---
 
