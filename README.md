@@ -55,7 +55,7 @@ This project is an end-to-end data analysis solution designed to extract critica
 
 ### 9. SQL Analysis: Complex Queries and Business Problem Solving
    - **Business Problem-Solving**: Write and execute complex SQL queries to answer critical business questions, such as:
-     1) Analyze Payment Methods and Sales
+    1) Analyze Payment Methods and Sales
           
    ```sql
     SELECT 
