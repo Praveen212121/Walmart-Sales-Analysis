@@ -36,6 +36,7 @@ This project is an end-to-end data analysis solution designed to extract critica
 ### 5. Explore the Data
    - **Goal**: Conduct an initial data exploration to understand data distribution, check column names, types, and identify potential issues.
    - **Analysis**: Used functions like `.info()`, `.describe()`, and `.head()` to get a quick overview of the data structure and statistics.
+![image](https://github.com/user-attachments/assets/55b5e4e7-239f-4f15-8be0-8e4df3cbe79f)
 
 ### 6. Data Cleaning
    - **Remove Duplicates**: Identified and removed duplicate entries to avoid skewed results.
