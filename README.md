@@ -1,5 +1,7 @@
 # Walmart Sales Analysis with SQL and Python
 
+![Walmart-Logo-PNG-Transparent](https://github.com/user-attachments/assets/d0437a44-edb3-4579-9451-ec90e4f84512)
+
 ## Project Overview
 
 
