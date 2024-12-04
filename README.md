@@ -196,27 +196,28 @@ LIMIT 5;
 
 ## Results and Insights
 
-**Sales Insights**
+**1) Sales Insights**
 
-Key Categories: The dataset reveals that Health and Beauty, Electronic Accessories, and Food and Beverages are prominent categories, with numerous transactions recorded.
+‣ Key Categories: The dataset reveals that Health and Beauty, Electronic Accessories, and Food and Beverages are prominent categories, with numerous transactions recorded.
 
-Branches with Highest Sales: Branches such as San Antonio (WALM003) and Irving (WALM013) frequently appear in high-value transactions, indicating strong sales performance in these locations.
+‣ Branches with Highest Sales: Branches such as San Antonio (WALM003) and Irving (WALM013) frequently appear in high-value transactions, indicating strong sales performance in these locations.
 
-Preferred Payment Methods: The most common payment methods include Ewallet, Cash, and Credit Card, with Ewallet being particularly popular among customers.
+‣ Preferred Payment Methods: The most common payment methods include Ewallet, Cash, and Credit Card, with Ewallet being particularly popular among customers.
 
-**Profitability**
+**2) Profitability**
 
-Most Profitable Product Categories: Categories like Health and Beauty and Fashion Accessories show higher profit margins, suggesting they are more lucrative for the business.
+‣ Most Profitable Product Categories: Categories like Health and Beauty and Fashion Accessories show higher profit margins, suggesting they are more lucrative for the business.
 
-Locations of High Profitability: Branches such as Bryan (WALM042) and San Antonio (WALM003) not only have high sales but also significant profit margins, indicating their effectiveness in generating revenue.
+‣ Locations of High Profitability: Branches such as Bryan (WALM042) and San Antonio (WALM003) not only have high sales but also significant profit margins, indicating their effectiveness in generating revenue.
 
-**Customer Behavior**
+**3) Customer Behavior**
 
-Trends in Ratings: Products generally receive favorable ratings, with many items scoring above 8. This suggests customer satisfaction is relatively high across various categories.
+‣ Trends in Ratings: Products generally receive favorable ratings, with many items scoring above 8. This suggests customer satisfaction is relatively high across various categories.
 
-Payment Preferences: Customers tend to favor digital payment options like Ewallet, reflecting a trend towards cashless transactions.
+‣ Payment Preferences: Customers tend to favor digital payment options like Ewallet, reflecting a trend towards cashless transactions.
 
-Peak Shopping Hours: The data indicates peak shopping times are often around late morning to early afternoon (10 AM - 2 PM), which is typical for retail environments.
+‣ Peak Shopping Hours: The data indicates peak shopping times are often around late morning to early afternoon (10 AM - 2 PM), which is typical for retail environments.
+
 This analysis provides a comprehensive overview of sales dynamics, profitability, and customer behavior within the Walmart dataset.
 
 ---
