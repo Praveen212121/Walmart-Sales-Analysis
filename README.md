@@ -57,23 +57,23 @@ This project is an end-to-end data analysis solution designed to extract critica
    - **Business Problem-Solving**: Write and execute complex SQL queries to answer critical business questions, such as:
      - 1. Analyze Payment Methods and Sales
           
-    ```sql
+   ```sql
     SELECT 
     payment_method,
     COUNT(*) AS no_payments,
     SUM(quantity) AS no_qty_sold
     FROM walmart
     GROUP BY payment_method;
+   ```
 
-
-     - 2. Identify the Highest-Rated Category in Each Branch
-     - 3. Determine the Busiest Day for Each Branch
-     - 4. Calculate Total Quantity Sold by Payment Method
-     - 5. Analyze Category Ratings by City
-     - 6. Calculate Total Profit by Category
-       7. Determine the Most Common Payment Method per Branch
-       8. Analyze Sales Shifts Throughout the Day
-       9. Identify Branches with Highest Revenue Decline Year-Over-Year
+   - 2. Identify the Highest-Rated Category in Each Branch
+   - 3. Determine the Busiest Day for Each Branch
+   - 4. Calculate Total Quantity Sold by Payment Method
+   - 5. Analyze Category Ratings by City
+   - 6. Calculate Total Profit by Category
+   - 7. Determine the Most Common Payment Method per Branch
+   - 8. Analyze Sales Shifts Throughout the Day
+   - 9. Identify Branches with Highest Revenue Decline Year-Over-Year
 
 
 ### 10. Project Publishing and Documentation
