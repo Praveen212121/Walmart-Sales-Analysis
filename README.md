@@ -55,11 +55,25 @@ This project is an end-to-end data analysis solution designed to extract critica
 
 ### 9. SQL Analysis: Complex Queries and Business Problem Solving
    - **Business Problem-Solving**: Write and execute complex SQL queries to answer critical business questions, such as:
-     - Revenue trends across branches and categories.
-     - Identifying best-selling product categories.
-     - Sales performance by time, city, and payment method.
-     - Analyzing peak sales periods and customer buying patterns.
-     - Profit margin analysis by branch and category.
+     - 1. Analyze Payment Methods and Sales
+    ```sq
+    SELECT 
+    payment_method,
+    COUNT(*) AS no_payments,
+    SUM(quantity) AS no_qty_sold
+FROM walmart
+GROUP BY payment_method;
+```
+
+     - 2. Identify the Highest-Rated Category in Each Branch
+     - 3. Determine the Busiest Day for Each Branch
+     - 4. Calculate Total Quantity Sold by Payment Method
+     - 5. Analyze Category Ratings by City
+     - 6. Calculate Total Profit by Category
+       7. Determine the Most Common Payment Method per Branch
+       8. Analyze Sales Shifts Throughout the Day
+       9. Identify Branches with Highest Revenue Decline Year-Over-Year
+
 
 ### 10. Project Publishing and Documentation
    - **Documentation**: Maintained well-structured documentation of the entire process.
