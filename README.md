@@ -68,14 +68,126 @@ This project is an end-to-end data analysis solution designed to extract critica
    ```
 
    2) Identify the Highest-Rated Category in Each Branch
+   
+   ```sql
+SELECT branch, category, avg_rating
+FROM (
+    SELECT 
+        branch,
+        category,
+        AVG(rating) AS avg_rating,
+        RANK() OVER(PARTITION BY branch ORDER BY AVG(rating) DESC) AS ranked
+    FROM walmart
+    GROUP BY branch, category
+) AS ranked
+WHERE ranked = 1;
+   ```
    3) Determine the Busiest Day for Each Branch
+   ```sql
+SELECT branch, day_name, no_transactions
+FROM (
+    SELECT 
+        branch,
+        DAYNAME(STR_TO_DATE(date, '%d/%m/%Y')) AS day_name,
+        COUNT(*) AS no_transactions,
+        RANK() OVER(PARTITION BY branch ORDER BY COUNT(*) DESC) AS ranked
+    FROM walmart
+    GROUP BY branch, day_name
+) AS ranked
+WHERE ranked = 1;
+   ```
+   
    4) Calculate Total Quantity Sold by Payment Method
+   ```sql
+SELECT 
+    payment_method,
+    SUM(quantity) AS no_qty_sold
+FROM walmart
+GROUP BY payment_method;
+   ```   
+   
    5) Analyze Category Ratings by City
+   ```sql
+SELECT 
+    city,
+    category,
+    MIN(rating) AS min_rating,
+    MAX(rating) AS max_rating,
+    AVG(rating) AS avg_rating
+FROM walmart
+GROUP BY city, category;
+   ``` 
+   
    6) Calculate Total Profit by Category
+   ```sql
+SELECT 
+    category,
+    SUM(unit_price * quantity * profit_margin) AS total_profit
+FROM walmart
+GROUP BY category
+ORDER BY total_profit DESC;
+   ```  
+   
    7) Determine the Most Common Payment Method per Branch
+   ```sql
+WITH cte AS (
+    SELECT 
+        branch,
+        payment_method,
+        COUNT(*) AS total_trans,
+        RANK() OVER(PARTITION BY branch ORDER BY COUNT(*) DESC) AS ranked
+    FROM walmart
+    GROUP BY branch, payment_method
+)
+SELECT branch, payment_method AS preferred_payment_method
+FROM cte
+WHERE ranked = 1;
+   ```  
+   
    8) Analyze Sales Shifts Throughout the Day
+   ```sql
+SELECT
+    branch,
+    CASE 
+        WHEN HOUR(TIME(time)) < 12 THEN 'Morning'
+        WHEN HOUR(TIME(time)) BETWEEN 12 AND 17 THEN 'Afternoon'
+        ELSE 'Evening'
+    END AS shift,
+    COUNT(*) AS num_invoices
+FROM walmart
+GROUP BY branch, shift
+ORDER BY branch, num_invoices DESC;
+   ```
+   
    9) Identify Branches with Highest Revenue Decline Year-Over-Year
-
+   ```sql
+WITH revenue_2022 AS (
+    SELECT 
+        branch,
+        SUM(total) AS revenue
+    FROM walmart
+    WHERE YEAR(STR_TO_DATE(date, '%d/%m/%Y')) = 2022
+    GROUP BY branch
+),
+revenue_2023 AS (
+    SELECT 
+        branch,
+        SUM(total) AS revenue
+    FROM walmart
+    WHERE YEAR(STR_TO_DATE(date, '%d/%m/%Y')) = 2023
+    GROUP BY branch
+)
+SELECT 
+    r2022.branch,
+    r2022.revenue AS last_year_revenue,
+    r2023.revenue AS current_year_revenue,
+    ROUND(((r2022.revenue - r2023.revenue) / r2022.revenue) * 100, 2) AS revenue_decrease_ratio
+FROM revenue_2022 AS r2022
+JOIN revenue_2023 AS r2023 ON r2022.branch = r2023.branch
+WHERE r2022.revenue > r2023.revenue
+ORDER BY revenue_decrease_ratio DESC
+LIMIT 5;
+   ```
 
 ### 10. Project Publishing and Documentation
    - **Documentation**: Maintained well-structured documentation of the entire process.
